@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Failures Overview</title>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation"  class="active" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>ATLC API Automation</td>
+      <td>03 Nov 2022, 14:53</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Failures Overview</h2>
+      <p>The following summary displays scenarios that failed.</p>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+        <div class="elements">
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_6_1895053689.html">features/TC-07 Searche for available numbers from our integrated carriers.feature</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_233058432.html">@regression</a>
+</div>
+
+
+  <span class="lead-duration duration">3.875</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Searches for available numbers from our integrated carriers</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-1" class="collapse collapsable-details  in ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">path '/api/number/available'</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">request { &quot;countryCode&quot;: &quot;US&quot;, &quot;numberType&quot;: &quot;Local&quot;, &quot;quantity&quot;: 4, &quot;consecutive&quot;:1, &quot;searchType&quot;: &quot;LATA&quot;, &quot;searchExpression&quot;: &quot;224&quot; }</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">method POST</span>
+
+  <span class="lead-duration duration">3.874</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>14:52:59.805 request:
+1 &gt; POST https://test-api.porting.com/api/number/available
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNCMzY0NzIyRTI2RDU4NTY2Rjg2REE0RDdFRDNCQ0E0M0Q2QzVENTYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJPelpISXVKdFdGWnZodHBOZnRPOHBEMXNYVlkifQ.eyJuYmYiOjE2Njc0NjczNjEsImV4cCI6MTY2NzQ3MDk2MSwiaXNzIjoiaHR0cHM6Ly9hdXRoLnBvcnRpbmcuY29tIiwiYXVkIjoicG9ydGNvbnRyb2wud2ViLmFwaS50c3QiLCJjbGllbnRfaWQiOiJDbGllbnQuUG9ydENvbnRyb2wuV2ViIiwic3ViIjoiOWQ4OTNhNWYtZWI5NS00YjJmLWJiZjYtNzJlMTc2MDA2Y2IyIiwiYXV0aF90aW1lIjoxNjY3NDY3MzYxLCJpZHAiOiJsb2NhbCIsImVtYWlsIjoic3VyZXNoa3VtYXJAZW5zYXJzb2x1dGlvbnMuY29tIiwiZmFtaWx5X25hbWUiOiJLdW1hciIsImdpdmVuX25hbWUiOiJTdXJlc2giLCJ6b25laW5mbyI6IlVUQyIsImxvY2FsZSI6ImVuX1VTIiwic2NvcGUiOlsicG9ydGNvbnRyb2wud2ViLmFwaS50c3QiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.IKrbc-BTtpmRFTtLd8F3VU4b2nQIDzaYo9Nqw2GZoFh0l1v38VDxKZdV2D902gltg8xjZgKNpz_0yanYfWd_F80lhuSv0dRJiKR99ntCKHXv3ICJ-6orAtCRwmVvpI4aCuUfyjndE_HmT4s_hmilU41izXw7TbpJLQT669Oq1EeH2Eu8Ssnu4pVQv3qjuoy4mHsIk93Ra2RwRcf3sXhuGL20IqARfloXjIXtPp9ZK6DSHqxGQ87T9mxQ4e_UspXVzeFJ1-jGwXDAqINdqdWclxSJQYsrZP622JpEbPoQlVCFyPh4wS9p0_gJMUGGqjcchQVWM6uYS962NLZM5MP-cg
+1 &gt; X-PortControl-Tenant: Y228
+1 &gt; Content-Length: 115
+1 &gt; Host: test-api.porting.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;countryCode&quot;:&quot;US&quot;,&quot;numberType&quot;:&quot;Local&quot;,&quot;quantity&quot;:4,&quot;consecutive&quot;:1,&quot;searchType&quot;:&quot;LATA&quot;,&quot;searchExpression&quot;:&quot;224&quot;}
+
+14:53:03.676 response time in milliseconds: 3870
+1 &lt; 400
+1 &lt; Content-Length: 125
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Date: Thu, 03 Nov 2022 09:23:02 GMT
+1 &lt; Server: Microsoft-IIS/10.0
+1 &lt; Strict-Transport-Security: max-age=2592000
+1 &lt; X-Powered-By: ASP.NET
+{&quot;fieldErrors&quot;:{},&quot;result&quot;:&quot;failed&quot;,&quot;message&quot;:&quot;No valid credentials found for tenant '6233 co'. Is the subscription active?&quot;}
+
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">status 200</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>status</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>status code was: 400, expected: 200, response time in milliseconds: 3870, url: https://test-api.porting.com/api/number/available, response: 
+{&quot;fieldErrors&quot;:{},&quot;result&quot;:&quot;failed&quot;,&quot;message&quot;:&quot;No valid credentials found for tenant '6233 co'. Is the subscription active?&quot;}
+classpath:features/TC-07 Searche for available numbers from our integrated carriers.feature:14</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-5">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details">
+        <pre>14:53:03.677 classpath:features/TC-07 Searche for available numbers from our integrated carriers.feature:14
+Then status 200
+status code was: 400, expected: 200, response time in milliseconds: 3870, url: https://test-api.porting.com/api/number/available, response: 
+{&quot;fieldErrors&quot;:{},&quot;result&quot;:&quot;failed&quot;,&quot;message&quot;:&quot;No valid credentials found for tenant '6233 co'. Is the subscription active?&quot;}
+classpath:features/TC-07 Searche for available numbers from our integrated carriers.feature:14
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">print response</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

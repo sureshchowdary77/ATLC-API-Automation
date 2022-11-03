@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/TC-02 Retrieve Ownership of Telephone Number[1:9]","start":1667467366286,"end":1667467367425,"title":"features\/TC-02 Retrieve Ownership of Telephone Number[1:9] 14:52:46.286-14:52:47.425 Retrieving Single telephone number Ownership details"},{"id":2,"group":1,"content":"features\/TC-04 Retrieve history data of Telephone Number[1:9]","start":1667467368756,"end":1667467370642,"title":"features\/TC-04 Retrieve history data of Telephone Number[1:9] 14:52:48.756-14:52:50.642 Retrieving history data of Single telephone number"},{"id":3,"group":1,"content":"features\/TC-06 Update CNam for Telephone Number[1:10]","start":1667467376037,"end":1667467379592,"title":"features\/TC-06 Update CNam for Telephone Number[1:10] 14:52:56.037-14:52:59.592 Update Cname of Single telephone number"},{"id":4,"group":1,"content":"features\/TC-01 Login or Token[1:7]","start":1667467359916,"end":1667467364410,"title":"features\/TC-01 Login or Token[1:7] 14:52:39.916-14:52:44.410 Generate Authentication Token"},{"id":5,"group":1,"content":"features\/TC-07 Searche for available numbers from our integrated carriers[1:10]","start":1667467379793,"end":1667467383677,"title":"features\/TC-07 Searche for available numbers from our integrated carriers[1:10] 14:52:59.793-14:53:03.677 Searches for available numbers from our integrated carriers","className":"failed"},{"id":6,"group":1,"content":"features\/TC-05 Retrieve Caller Id Name for Single Telephone Number[1:10]","start":1667467370753,"end":1667467375944,"title":"features\/TC-05 Retrieve Caller Id Name for Single Telephone Number[1:10] 14:52:50.753-14:52:55.944 Retrieving Cname of Single telephone number"},{"id":7,"group":1,"content":"features\/TC-03 Retrieve detailed info Telephone Number[1:9]","start":1667467367562,"end":1667467368568,"title":"features\/TC-03 Retrieve detailed info Telephone Number[1:9] 14:52:47.562-14:52:48.568 Retrieving detailed info of Single telephone number"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
