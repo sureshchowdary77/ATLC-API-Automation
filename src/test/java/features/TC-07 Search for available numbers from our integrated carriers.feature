@@ -10,6 +10,6 @@ Feature: Searches for available numbers from our integrated carriers
   Scenario: Searches for available numbers from our integrated carriers
     Given path '/api/number/available'
     And request { "countryCode": "US", "numberType": "Local", "quantity": 4, "consecutive":1, "searchType": "LATA", "searchExpression": "224" }
-    When method POST
+    When method Post
     Then status 200
     And print response
